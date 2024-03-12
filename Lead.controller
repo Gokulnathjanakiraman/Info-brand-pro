@@ -1,0 +1,63 @@
+package com.infobrandpro22.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.infobrandpro22.entity.Bill;
+import com.infobrandpro22.entity.Contact;
+import com.infobrandpro22.entity.Lead;
+import com.infobrandpro22.service.Billservic;
+import com.infobrandpro22.service.Contactservic;
+import com.infobrandpro22.service.Leadservic;
+import com.infobrandpro22.util.Emailutil;
+
+@Controller
+public class Leadcontroller {
+	
+	@Autowired
+	public Leadservic leadservic;
+		
+	@Autowired
+	public Contactservic contactservic;
+	
+	@Autowired
+	public Billservic billservic;
+	@Autowired
+	private Emailutil emailutil;
+		//http:localhost:8080/Newlead
+		@RequestMapping("/Newlead")
+		public String show() {
+			
+			return "Newlead";
+		}
+		@RequestMapping("/savelead")
+		public String savelead(Lead lead,ModelMap model) {
+			
+			leadservic.saveleadinfo(lead);
+			emailutil.sendZohoEmail(lead.getEmailId(),"welcome to toyota","congratulation to carbooking");
+			model.addAttribute("lead",lead);
+			return "Newcontact";
+
+			
+		
+	}
+		@RequestMapping("/savecontact")
+		public String savecontact(Contact contact,@RequestParam("id")long id) {
+			contactservic.savecontactinfo(contact);
+			leadservic.deleteOneLead(id);
+			return "Bill";
+		}
+		@RequestMapping("/savebill")
+		public String savebill(Bill bill) {
+			billservic.saveBillinfo(bill);
+			
+			
+			return "Newlead";
+
+}
+}
+
+

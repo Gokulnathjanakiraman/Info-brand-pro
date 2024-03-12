@@ -1,0 +1,80 @@
+package com.infobrandpro22.entity;
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="bills")
+public class Bill {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	private String firstName;
+	private String lastName;
+	private String emailId;
+	private String mobilNo;
+	private String prodName;
+	private String prodAmount;
+	private String netQty;
+	private String totalAmount;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getEmailId() {
+		return emailId;
+	}
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	public String getMobilNo() {
+		return mobilNo;
+	}
+	public void setMobilNo(String mobilNo) {
+		this.mobilNo = mobilNo;
+	}
+	public String getProdName() {
+		return prodName;
+	}
+	public void setProdName(String prodName) {
+		this.prodName = prodName;
+	}
+	public String getProdAmount() {
+		return prodAmount;
+	}
+	public void setProdAmount(String prodAmount) {
+		this.prodAmount = prodAmount;
+	}
+	public String getNetQty() {
+		return netQty;
+	}
+	public void setNetQty(String netQty) {
+		this.netQty = netQty;
+	}
+	public String getTotalAmount() {
+		return totalAmount;
+	}
+	public void setTotalAmount(String totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+	
+}

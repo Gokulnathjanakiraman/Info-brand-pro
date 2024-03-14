@@ -1,0 +1,20 @@
+package com.infobrandpro22.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.infobrandpro22.entity.Contact;
+import com.infobrandpro22.repository.Contactrepo;
+@Service
+public class Contactservicinfo implements Contactservic {
+
+	@Autowired
+	public Contactrepo contactrepo;
+	@Override
+	public void savecontactinfo(Contact contact) {
+		
+
+		contactrepo.save(contact);
+	}
+
+}

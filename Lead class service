@@ -1,0 +1,24 @@
+package com.infobrandpro22.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.infobrandpro22.entity.Lead;
+import com.infobrandpro22.repository.Leadrepo;
+@Service
+public class Leadservicinfo implements Leadservic {
+
+	@Autowired
+	public Leadrepo leadreposit;
+	@Override
+	public void saveleadinfo(Lead lead) {
+		
+
+		leadreposit.save(lead);
+	}
+	@Override
+	public void deleteOneLead(long id) {
+		leadreposit.deleteById(id);
+		
+	}
+}

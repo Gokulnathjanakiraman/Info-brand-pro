@@ -1,0 +1,8 @@
+package com.infobrandpro22.util;
+
+
+
+public interface Emailutil {
+
+	public void sendZohoEmail(String to,String sub,String text);
+}

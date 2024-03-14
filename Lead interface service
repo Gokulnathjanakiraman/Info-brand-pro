@@ -1,0 +1,10 @@
+package com.infobrandpro22.service;
+
+import com.infobrandpro22.entity.Lead;
+
+public interface Leadservic {
+	public void saveleadinfo(Lead lead);
+
+	public void deleteOneLead(long id);
+
+}

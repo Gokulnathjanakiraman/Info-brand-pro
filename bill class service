@@ -1,0 +1,20 @@
+package com.infobrandpro22.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.infobrandpro22.entity.Bill;
+import com.infobrandpro22.repository.Billrepo;
+@Service
+public class Billserviceinfo implements Billservic {
+
+	@Autowired
+	public Billrepo billrepo;
+	@Override
+	public void saveBillinfo(Bill bill) {
+		// TODO Auto-generated method stub
+
+		billrepo.save(bill);
+	}
+
+}

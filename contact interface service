@@ -1,0 +1,8 @@
+package com.infobrandpro22.service;
+
+import com.infobrandpro22.entity.Contact;
+
+public interface Contactservic {
+
+	public void savecontactinfo(Contact contact);
+}
